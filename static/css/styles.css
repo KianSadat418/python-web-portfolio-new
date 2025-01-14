@@ -1,0 +1,767 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    border-bottom: 1px solid white;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    opacity: 1;
+}
+
+.navbar.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.navbar.scrolled {
+    background: rgb(75, 75, 75);
+    opacity: 1;
+    transform: translateY(0);
+    border-bottom: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+    color: #ffaf3f;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active:hover {
+    color: #cf8e33;
+}
+
+.nav-links a:hover {
+    color: #cecece;
+}
+
+/* Hero Section */
+.hero {
+    background: url('/static/images/hero-bg.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.hero .social-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.hero .social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.hero .social-links a:hover {
+    color: #ffaf3f;
+}
+
+.section {
+    padding: 4rem 2rem;
+}
+
+.section h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #0073e6;
+}
+
+/* About Section */
+.about-container {
+    background: #1e1e1e;
+    padding: 4rem 2rem;
+    color: #b1b1b1;
+    text-align: center;
+    width: 100%;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-image img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.about-description {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-description-profile {
+    margin-top: 2rem;
+}
+
+.about-description-profile a {
+    text-decoration: none;
+    color: #ffaf3f;
+}
+
+.about-description-profile a:hover {
+    text-decoration: underline;
+    color: #976724;
+}
+
+.skills-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.progress-arc {
+    width: 120px;
+    height: 120px;
+    transform: rotate(90deg);
+}
+
+.bg-circle {
+    fill: none;
+    stroke: #3b3b3b;
+    stroke-width: 8;
+}
+
+.progress-circle {
+    fill: none;
+    stroke: #ffaf3f;
+    stroke-width: 8;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 1.5s ease-out;
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.skill h3 {
+    font-size: 1rem;
+    color: #f4f4f4;
+}
+
+.profile-section {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.profile-buttons .btn {
+    padding: 0.8rem 1.5rem;
+    background: #0073e6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.profile-buttons .btn:hover {
+    background: #005bb5;
+}
+
+/* Experiences Section */
+.experiences-container {
+    background: #fff;
+    padding: 4rem 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.section-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.timeline-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.timeline-wrap::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 1rem;
+    bottom: 1rem;
+    width: 3px;
+    background: rgb(220, 220, 220);
+}
+
+.timeline-wrap::after{
+    content: '';
+    position: absolute;
+    right: -0.5rem;
+    top: 1rem;
+    bottom: 1rem;
+    width: 3px;
+    background: rgb(220, 220, 220);
+}
+
+.timeline-block {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.timeline-date {
+    font-size: 1rem;
+    font-weight: bold;
+    color: grey;
+    text-align: center;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+}
+
+.content-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+    position: relative;
+}
+
+.card-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #ffaf3f;
+    color: #fff;
+    font-size: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-header h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-body h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0073e6;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-body p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .content-card {
+        padding: 1.5rem;
+    }
+
+    .timeline-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-body h4 {
+        font-size: 1.1rem;
+    }
+
+    .card-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Projects Section */
+#projects {
+    background: #eeeeee;
+    padding: 4rem 2rem;
+}
+
+.project-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.project-title h2 {
+    display: inline-block;
+    border-bottom: 4px solid #ffaf3f;
+}
+
+.project-title h1 {
+    font-size: 2.5rem;
+}
+
+.project-title p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    justify-items: center;
+}
+
+.project-card {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .overlay {
+    opacity: 1;
+}
+
+.project-card .overlay span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.project-card .overlay p {
+    font-size: 0.9rem;
+    font-weight: lighter;
+    color: #ababab;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0rem;
+    }
+
+    .project-card {
+        max-width: 20rem;
+    }
+}
+
+/* ========== Achievements Section ========== */
+.achievements-container {
+    background: #fff;
+    padding: 4rem 2rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  
+  .achievement-card {
+    background: #ffaf3f;
+    color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .achievement-card p {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .achievement-icon {
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 1rem;
+  }
+  
+/* ========== Gallery Section ========== */
+.gallery-container {
+    background: #1e1e1e;       /* matches your dark theme */
+    padding: 4rem 2rem;
+    color: #dadada;
+    text-align: center;
+  }
+  
+  /* Carousel Wrapper */
+  .carousel-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    height: 400px; /* Adjust as needed */
+    overflow: hidden; /* Hide overflow so items move smoothly */
+  }
+  
+  /* The track that holds all items side by side (positioned absolutely) */
+  .carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Individual carousel items */
+  .carousel-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1;
+    opacity: 0; /* Hidden by default until we decide which ones are visible */
+    cursor: pointer;
+  }
+  
+  .carousel-item img {
+    max-width: 300px;  /* Adjust to your desired size */
+    max-height: 300px; /* Adjust to your desired size */
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Classes applied via JavaScript to position items */
+  .carousel-item.active {
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 3;
+    opacity: 1;
+  }
+  
+  .carousel-item.left {
+    transform: translate(calc(-50% - 300px), -50%) scale(0.8);
+    z-index: 2;
+    opacity: 1;
+  }
+  
+  .carousel-item.right {
+    transform: translate(calc(-50% + 300px), -50%) scale(0.8);
+    z-index: 2;
+    opacity: 1;
+  }
+  
+  .carousel-item.far-left,
+  .carousel-item.far-right {
+    transform: translate(-50%, -50%) scale(0.6);
+    z-index: 1;
+    opacity: 0; /* or a lower opacity if you want them slightly visible in the distance */
+  }
+
+  .carousel-subtitle {
+    margin-top: 1rem;
+    margin-bottom: 2rem;  /* spacing above the nav buttons */
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    min-height: 1.5em;    /* optional: to keep space even if empty */
+  }
+  
+  /* 4) The actual text that slides in from left to right */
+  #carousel-subtitle-text {
+    display: inline-block;
+    opacity: 0;
+  }
+  
+  /* 5) Left-to-right slide animation keyframes */
+  @keyframes slideInLeftToRight {
+    0% {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Navigation Buttons */
+  .carousel-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .nav-btn {
+    background: #0073e6;
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .nav-btn:hover {
+    background: #005bb5;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .carousel-container {
+      height: 300px;
+    }
+  
+    .carousel-item img {
+      max-width: 200px;
+      max-height: 200px;
+    }
+  
+    .carousel-item.left {
+      transform: translate(calc(-50% - 200px), -50%) scale(0.8);
+    }
+    .carousel-item.right {
+      transform: translate(calc(-50% + 200px), -50%) scale(0.8);
+    }
+  }  
+  
+  /* ========== Contact Section ========== */
+  .contact-container {
+    background: #f7f7f7;
+    padding: 4rem 2rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 900px;
+    margin: 3rem auto 0 auto;
+  }
+  
+  .contact-form-wrapper,
+  .contact-info {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .contact-form button.btn {
+    background: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .contact-form button.btn:hover {
+    background: #005bb5;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .contact-info p a {
+    color: #0073e6;
+    text-decoration: none;
+  }
+  
+  .contact-info p a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design for Achievements, Gallery, and Contact Grids */
+  @media (max-width: 768px) {
+    .achievement-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Optional: Make the embedded map responsive */
+  .map-responsive iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }  
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
